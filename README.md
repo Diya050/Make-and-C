@@ -82,9 +82,9 @@ Let's go through each section of this Makefile:
 
 `CFLAGS` specifies any flags you want to pass to the compiler (in this case, -Wall enables all warnings).
 
-`SRC` lists all the source files for your program (main.c, foo.c, and bar.c).
+`SRC` lists all the source files for your program (main.c, type1.c, and type2.c).
 
-`OBJ` specifies the corresponding object files for each source file (e.g., main.o, foo.o, and bar.o).
+`OBJ` specifies the corresponding object files for each source file (e.g., main.o, type1.o, and type2.o).
 
 `all` is a special target that tells make what to build by default when you run make. In this case, it's program.
 
