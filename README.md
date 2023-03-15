@@ -102,3 +102,29 @@ To clean up the build artifacts (i.e., the program executable and object files),
 My Output:
 
 ![Image](image.png)
+
+
+## What are dependencies in above example?
+
+In the above example, there are several dependencies that need to be resolved in order to build the final executable program. These dependencies are specified in the `Makefile` using the `all` and `program` targets, as well as the pattern rule for building object files.
+
+The `all` target depends on the `program` target, which means that in order to build `all`, `program` must be built first. This is because `all` is defined as follows:
+
+```makefile
+all: program
+```
+The program target depends on all the object files (`$(OBJ)`), which are built from the corresponding source files (`$(SRC:.c=.o`)). This is specified by the following line in the Makefile:
+
+```makefile
+program: $(OBJ)
+```
+
+In addition, the object files themselves depend on their corresponding source files. This is specified by the following pattern rule:
+
+```makefile
+%.o: %.c
+```
+
+This rule tells make how to build any object file (`%.o`) from its corresponding source file (`%.c`). When make encounters a dependency like this, it automatically tries to build the target by running the rule associated with the target.
+
+By specifying these dependencies, `make` can determine the correct order in which to build the various components of the program. It ensures that each component is built only once and in the correct order, minimizing build times and avoiding unnecessary work.
