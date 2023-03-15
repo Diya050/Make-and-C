@@ -104,6 +104,7 @@ My Output:
 ![Image](image.png)
 
 
+
 ## What are dependencies in above example?
 
 In the above example, there are several dependencies that need to be resolved in order to build the final executable program. These dependencies are specified in the `Makefile` using the `all` and `program` targets, as well as the pattern rule for building object files.
